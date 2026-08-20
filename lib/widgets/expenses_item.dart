@@ -24,7 +24,7 @@ final Expense expense;
                     children: [
                       Icon(CategoryIcons[expense.category]),
                       SizedBox(width: 6),
-                      Text(expense.formattedData)
+                      Text(expense.formattedDate)
                     ],
                   ),
                 ],

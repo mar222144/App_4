@@ -12,14 +12,13 @@ enum Category {
   leisure,
   work,
 }
-//map from each Category
-const CategoryIcons= {
-  Category.food : Icons.lunch_dining,
-  Category.travel : Icons.flight_takeoff,
-  Category.leisure : Icons.movie,
-  Category.work : Icons.work,
 
-
+// Map from each Category
+const CategoryIcons = {
+  Category.food: Icons.lunch_dining,
+  Category.travel: Icons.flight_takeoff,
+  Category.leisure: Icons.movie,
+  Category.work: Icons.work,
 };
 
 // For describing a single expense
@@ -29,18 +28,17 @@ class Expense {
   final double amount;
   final DateTime date;
   final Category category;
-  String get formattedData{  //accessing a fun like a var not need of ()
-    return formatter.format(date);  //Take the date and convert it into a formatted text (String)
+
+  String get formattedDate {
+    return formatter.format(date);
   }
-
-
-
 
   // Constructor
   Expense({
+    String? id,
     required this.title,
     required this.amount,
     required this.date,
     required this.category,
-  }) : id = uuid.v4();
+  }) : id = id ?? const Uuid().v4();
 }
